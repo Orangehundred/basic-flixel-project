@@ -22,12 +22,14 @@ class PlayState extends FlxState
 		add(text);	
 
 		/*ScreensaverHero*/            
-		var shape = new ScreensaverHero(50, 50);
+		var shape:ScreensaverHero = new ScreensaverHero(50, 50);
+		shape.screenCenter();
 		add(shape);   
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		
 	}
 }

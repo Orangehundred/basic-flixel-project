@@ -3,17 +3,16 @@ package;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 
+
 class ScreensaverHero extends FlxSprite
 {
-    public function new(x:Float = 0, y:Float = 0)
+    public function new(x:Int = 0, y:Int = 0)
     {
         super(x,y);
-        this.makeGraphic(20, 40, FlxColor.BLUE, false);
+        this.makeGraphic(50, 12, FlxColor.YELLOW, false);
     }
     override public function update(elapsed:Float)
         {
             super.update(elapsed);
         }
 }
-
-
