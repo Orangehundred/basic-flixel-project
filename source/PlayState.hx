@@ -22,10 +22,8 @@ class PlayState extends FlxState
 		add(text);	
 
 		/*ScreensaverHero*/            
-        var rectangle:ScreensaverHero = new ScreensaverHero(64,32);
-        rectangle.makeGraphic(64, 32, FlxColor.BLUE);
-        rectangle.screenCenter();
-		add(rectangle);   
+		var shape = new ScreensaverHero(50, 50);
+		add(shape);   
 	}
 
 	override public function update(elapsed:Float)
