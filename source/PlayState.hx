@@ -3,9 +3,12 @@ package;
 import flixel.util.FlxColor;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.group.FlxGroup;
 
 class PlayState extends FlxState
 {
+	var screensaverGroup = new FlxTypedGroup<ScreensaverHero>();
+
 	override public function create()
 	{
 		super.create();
@@ -23,8 +26,13 @@ class PlayState extends FlxState
 
 		/*ScreensaverHero*/            
 		var shape:ScreensaverHero = new ScreensaverHero(50, 50);
+		/*for (i in 0...5) {
+		screensaverGroup.add(new ScreensaverHero(50, 50));
+		}*/
 		shape.screenCenter();
-		add(shape);   
+		add(shape);
+		
+
 	}
 
 	override public function update(elapsed:Float)
