@@ -22,10 +22,10 @@ class PlayState extends FlxState
 		add(hero);
 
 		/*Text*/
-		var text = new flixel.text.FlxText(0, 20, 0, "Pong Game?", 20);
+		var text = new flixel.text.FlxText(0, 0, 0, "Pong Game?", 20);
 		text.screenCenter();
 		text.color = FlxColor.WHITE;
-		text.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.RED, 1);
+		text.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.LIME, 1);
 		add(text);	
 
 		/*ScreensaverHero*/            
