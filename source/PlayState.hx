@@ -8,6 +8,7 @@ import flixel.group.FlxGroup;
 
 class PlayState extends FlxState
 {
+	/*Global Variables*/
 	var controlledHero:ControllableHero;
 	var screensaverGroup = new FlxTypedGroup<ScreensaverHero>();
 	var wallGroup = new FlxTypedGroup<Wall>();
@@ -21,33 +22,25 @@ class PlayState extends FlxState
 		add(hero);
 
 		/*Text*/
-		var text = new flixel.text.FlxText(0, 0, 0, "Hello World, how are you?", 20);
+		var text = new flixel.text.FlxText(0, 20, 0, "Hello World, how are you?", 20);
 		text.screenCenter();
 		text.color = FlxColor.WHITE;
 		text.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.RED, 1);
 		add(text);	
 
 		/*ScreensaverHero*/            
-
-
-		var ScreensaverHero = new ScreensaverHero(50, 50);
-		var ScreensaverHero1 = new ScreensaverHero(30, 30);
-		var ScreensaverHero2 = new ScreensaverHero(100, 100);
-		var ScreensaverHero3 = new ScreensaverHero(85, 85);
-		var ScreensaverHero4 = new ScreensaverHero(20, 20);
-		screensaverGroup.add(ScreensaverHero);
-		screensaverGroup.add(ScreensaverHero1);
-		screensaverGroup.add(ScreensaverHero2);
-		screensaverGroup.add(ScreensaverHero3);
-		screensaverGroup.add(ScreensaverHero4);
 		add(screensaverGroup);
+		for (i in 0...15)
+			{
+				screensaverGroup.add(new ScreensaverHero(50, 50));
+			}
 
 		/*Walls*/
-
-		wallGroup.add(new Wall(0, 50));
-		wallGroup.add(new Wall(50, 100));
-		wallGroup.add(new Wall(0, -50));
-		wallGroup.add(new Wall(50, 500));
+		wallGroup.add(new Wall(150, 300));
+		wallGroup.add(new Wall(300, 200));
+		wallGroup.add(new Wall(50, 400));
+		wallGroup.add(new Wall(450, 300));
+		wallGroup.add(new Wall(600, 400));
 		add(wallGroup);
 
 		/*ControllableHero*/
@@ -63,8 +56,8 @@ class PlayState extends FlxState
 		FlxG.collide(controlledHero, wallGroup);
 		super.update(elapsed);
 
-		/*
-		if (screensaverGroup.velocity.x > 0 && screensaverGroup.x >= FlxG.width - sprscreensaverGroupite.width)
+		
+		/*if (screensaverGroup.velocity.x > 0 && screensaverGroup.x >= FlxG.width - screensaverGroup.width)
 			{
 				screensaverGroup.x = FlxG.width - screensaverGroup.width;
 				screensaverGroup.velocity.x *= -1;
@@ -74,7 +67,7 @@ class PlayState extends FlxState
 				screensaverGroup.x = 0;
 				screensaverGroup.velocity.x *= -1;
 			}
-		}
-		*/
+		}*/
+		
 	}
 }

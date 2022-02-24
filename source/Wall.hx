@@ -7,7 +7,7 @@ class Wall extends FlxSprite
 	{
 		super(x,y);
 
-		this.makeGraphic(25, 50, FlxColor.RED, false);
+		this.makeGraphic(25, 25, FlxColor.RED, false);
 		immovable = true;
 	}
 

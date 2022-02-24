@@ -16,11 +16,11 @@ class ScreensaverHero extends FlxSprite
         super(x,y);
 
 
-        this.makeGraphic(30, 30, FlxColor.CYAN, false);
+        this.makeGraphic(20, 20, FlxColor.PINK, false);
 
 
-        this.velocity.x = randomDirection.float(30, 20);
-        this.velocity.y = randomDirection.float(0, 30);
+        this.velocity.x = randomDirection.float(25, 45);
+        this.velocity.y = randomDirection.float(0, 20);
 
     }
 
