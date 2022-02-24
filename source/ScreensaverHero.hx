@@ -30,14 +30,21 @@ class ScreensaverHero extends FlxSprite
             {
                 this.color = FlxColor.fromHSL(250, 0.2, .5, 0.5);
             }
-            if (x < y)
+            else if (x < y)
             {
                 this.color = FlxColor.fromHSL(50, 0.8, .5, 0.1);
             }
             else
             {
                 this.color = FlxColor.fromHSL(100, 0.5, .5, 0.9);
-            }
+            }            
+        }
+
+
+    override public function update(elapsed:Float)
+        {
+            changeColor(this.x / FlxG.width, this.y / FlxG.height);
+            super.update(elapsed);
 
         /*If out of bounds*/
         if (this.velocity.x > 0 && this.x >= FlxG.width - this.width)
@@ -53,20 +60,13 @@ class ScreensaverHero extends FlxSprite
         if (this.velocity.y > 0 && this.y >= FlxG.height - this.height)
             {
                 this.y = FlxG.height - this.height;
-                this.velocity.y *= 1;
+                this.velocity.y *= -1;
             }
-            else if (this.velocity.y < 0 && this.x <= 0)
+            else if (this.velocity.y < 0 && this.y <= 0)
             {
                 this.y = 0;
-                this.velocity.y *= 1;
-            }            
-        }
-
-
-    override public function update(elapsed:Float)
-        {
-            changeColor(this.x / FlxG.width, this.y / FlxG.height);
-            super.update(elapsed);
+                this.velocity.y *= -1;
+            }
         }
 }
 

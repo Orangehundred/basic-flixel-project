@@ -48,7 +48,6 @@ class PlayState extends FlxState
 		controlledHero.screenCenter();
 		add(controlledHero);
 
-
 	}
 
 	override public function update(elapsed:Float)
