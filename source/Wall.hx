@@ -3,10 +3,12 @@ import flixel.util.FlxColor;
 
 class Wall extends FlxSprite
 {
-	public function new(x:Int = 0, y:Int = 0)
+	public function new(x:Float = 0, y:Float = 0)
 	{
 		super(x,y);
-		this.makeGraphic(15, 50, FlxColor.RED, false);
+
+		this.makeGraphic(25, 50, FlxColor.RED, false);
+		immovable = true;
 	}
 
 
