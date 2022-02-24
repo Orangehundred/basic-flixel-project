@@ -1,7 +1,6 @@
 package;
 
 import flixel.FlxSprite;
-
 import flixel.util.FlxColor;
 import flixel.FlxG;
 
@@ -16,6 +15,7 @@ class ControllableHero extends FlxSprite
         this.speed = speed;
         this.makeGraphic(10, 50, FlxColor.YELLOW, false);
     }
+
 
      function movement()
         {
@@ -35,7 +35,18 @@ class ControllableHero extends FlxSprite
                 {
                     this.velocity.y = speed;
                 }
+
+                /*If out of bounds*/
+                if ((velocity.x > 0 && x + width >= FlxG.width) || (velocity.x < 0 && x <= 0))
+                    velocity.x *= -1;
+                if ((velocity.y > 0 && y + height >= FlxG.height) || (velocity.y < 0 && y <= 0))
+                    velocity.y *= -1;
         }
+
+
+
+
+
     override public function update(elapsed:Float)
         {
             movement();

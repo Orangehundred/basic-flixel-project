@@ -16,7 +16,7 @@ class ScreensaverHero extends FlxSprite
         super(x,y);
 
 
-        this.makeGraphic(20, 20, FlxColor.PINK, false);
+        this.makeGraphic(20, 20, FlxColor.PURPLE, false);
 
 
         this.velocity.x = randomDirection.float(25, 45);
@@ -38,6 +38,12 @@ class ScreensaverHero extends FlxSprite
             {
                 this.color = FlxColor.fromHSL(100, 0.5, .5, 0.9);
             }
+
+            /*If out of bounds*/
+            if ((velocity.x > 0 && x + width >= FlxG.width) || (velocity.x < 0 && x <= 0))
+                velocity.x *= -1;
+            if ((velocity.y > 0 && y + height >= FlxG.height) || (velocity.y < 0 && y <= 0))
+                velocity.y *= -1;
         }
 
 

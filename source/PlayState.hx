@@ -22,7 +22,7 @@ class PlayState extends FlxState
 		add(hero);
 
 		/*Text*/
-		var text = new flixel.text.FlxText(0, 20, 0, "Hello World, how are you?", 20);
+		var text = new flixel.text.FlxText(0, 20, 0, "Pong Game?", 20);
 		text.screenCenter();
 		text.color = FlxColor.WHITE;
 		text.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.RED, 1);
@@ -55,19 +55,5 @@ class PlayState extends FlxState
 	{
 		FlxG.collide(controlledHero, wallGroup);
 		super.update(elapsed);
-
-		
-		/*if (screensaverGroup.velocity.x > 0 && screensaverGroup.x >= FlxG.width - screensaverGroup.width)
-			{
-				screensaverGroup.x = FlxG.width - screensaverGroup.width;
-				screensaverGroup.velocity.x *= -1;
-			}
-			else if (screensaverGroup.velocity.x < 0 && screensaverGroup.x <= 0)
-			{
-				screensaverGroup.x = 0;
-				screensaverGroup.velocity.x *= -1;
-			}
-		}*/
-		
 	}
 }
