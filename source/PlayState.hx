@@ -1,14 +1,16 @@
 package;
 
-
 import flixel.util.FlxColor;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.FlxG;
 import flixel.group.FlxGroup;
 
 class PlayState extends FlxState
 {
-
+	var controlledHero:ControllableHero;
+	var wallGroup = new FlxTypedGroup<Wall>();
+	
 	override public function create()
 	{
 		super.create();
@@ -37,12 +39,26 @@ class PlayState extends FlxState
 		add(ScreensaverHero3);
 		add(ScreensaverHero4);
 
-		
+		/*Walls*/
+		var wall1 = new Wall(50, 100);
+		var wall2 = new Wall(50, 200);
+		var wall3 = new Wall(50, 300);
+		var wall4 = new Wall(50, 400);
+
+		wallGroup.add(wall1);
+		wallGroup.add(wall2);
+		wallGroup.add(wall3);
+		wallGroup.add(wall4);
+
+		/*ControllableHero*/
+		var controlledHero = new ControllableHero(300, 150);
+		add(controlledHero);
 
 	}
 
 	override public function update(elapsed:Float)
 	{
+		FlxG.collide(controlledHero, wallGroup);
 		super.update(elapsed);
 		
 	}

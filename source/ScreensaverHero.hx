@@ -43,11 +43,8 @@ class ScreensaverHero extends FlxSprite
 
     override public function update(elapsed:Float)
         {
-            
             changeColor(this.x / FlxG.width, this.y / FlxG.height);
             super.update(elapsed);
-            
-
         }
 }
 
