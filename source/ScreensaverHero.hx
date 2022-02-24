@@ -30,7 +30,7 @@ class ScreensaverHero extends FlxSprite
             {
                 this.color = FlxColor.fromHSL(250, 0.2, .5, 0.5);
             }
-            if (x < y)
+            else if (x < y)
             {
                 this.color = FlxColor.fromHSL(50, 0.8, .5, 0.1);
             }
