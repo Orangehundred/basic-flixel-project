@@ -19,6 +19,8 @@ class ControllableHero extends FlxSprite
 
      function movement()
         {
+            this.velocity.x = 0;
+            this.velocity.y = 0;
             if (FlxG.keys.pressed.LEFT)
             {
                 this.velocity.x = -speed;
@@ -43,7 +45,6 @@ class ControllableHero extends FlxSprite
             {
                 velocity.x = 0;
             }
-
 
                 /*If out of bounds*/
                 if ((velocity.x > 0 && x + width >= FlxG.width) || (velocity.x < 0 && x <= 0))
